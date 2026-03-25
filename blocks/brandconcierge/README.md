@@ -9,7 +9,10 @@ This block provides a DOM mount point (`#brand-concierge-mount`) for Adobe Brand
 The block model has no authorable fields in Universal Editor (`fields: []`). Runtime behavior is controlled by:
 
 - **Datastream and org**: `datastreamId` and `orgId` in the `alloy("configure", …)` call in `head.html`.
-- **Styling and copy**: `scripts/styleconfigurations.js` (`window.styleConfiguration`).
+  - Datastream ID (techinsiders36 / alexanderd CitiSignal Brand Concierge.): `b60c331c-9ae7-48f5-80b5-374c81ff93f1`
+  - IMS Org ID: `907075E95BF479EC0A495C73@AdobeOrg` (in `head.html`; not the same as the Concierge Instance ID).
+- **Brand Concierge instance** (for your records; routing in production is via the datastream + AEP setup): `69c3df682a760672d0784c5d`
+- **Styling and copy**: `scripts/styleconfigurations.js` (`window.styleConfiguration`); metadata there also lists sandbox name `techinsiders36` and datastream name for documentation.
 
 ## Integration
 

@@ -4,6 +4,12 @@ window.styleConfiguration = {
     version: "1.0.0",
     language: "en-US",
     namespace: "brand-concierge",
+    // Reference (AEP / Brand Concierge): concierge instance is tied to the datastream in the UI; not read by Alloy from here.
+    datastreamId: "b60c331c-9ae7-48f5-80b5-374c81ff93f1",
+    datastreamName: "alexanderd - CitiSignal Brand Concierge. - Datastream",
+    conciergeInstanceId: "69c3df682a760672d0784c5d",
+    sandboxName: "techinsiders36",
+    imsOrgId: "907075E95BF479EC0A495C73@AdobeOrg",
   },
   behavior: {
     multimodalCarousel: {
