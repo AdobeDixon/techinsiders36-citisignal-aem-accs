@@ -1,1 +1,30 @@
+/* Full-width Brand Concierge: default sections use main > .section > div { max-width: 1200px } */
 
+main > .section.brandconcierge-container > div,
+main > .section:has(.block.brandconcierge) > div {
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  width: 100%;
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
+}
+
+@media (min-width: 900px) {
+  main > .section.brandconcierge-container > div,
+  main > .section:has(.block.brandconcierge) > div {
+    padding-left: var(--spacing-big);
+    padding-right: var(--spacing-big);
+  }
+}
+
+.block.brandconcierge {
+  max-width: none;
+  width: 100%;
+}
+
+#brand-concierge-mount {
+  min-height: 50vh;
+  width: 100%;
+}
