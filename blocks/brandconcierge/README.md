@@ -24,6 +24,10 @@ The block model has no authorable fields in Universal Editor (`fields: []`). Run
 1. Page loads style configuration, Alloy, and configuration.
 2. `sendEvent` with `fetchConversationalExperience: true` runs, then Brand Concierge bootstraps into the mount node.
 
+### In-block scrolling
+
+`brandconcierge.css` caps `#brand-concierge-mount` with a max height (viewport minus header) and overrides the embedded UI’s large `min-height` so the **conversation scrolls inside** `.brand-concierge-container` instead of growing the page. To tune height, set `--bc-mount-max-height` on `#brand-concierge-mount` (for example in a site stylesheet).
+
 ## Error handling
 
 If `datastreamId` / `orgId` are wrong or Edge calls fail, the experience may not render; check the browser console and Adobe Datastream configuration. Network or CSP issues loading `/scripts/alloy.js` or `/scripts/brandconciergemain.js` will prevent the UI from appearing.

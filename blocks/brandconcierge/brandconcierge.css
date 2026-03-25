@@ -24,7 +24,43 @@ main > .section:has(.block.brandconcierge) > div {
   width: 100%;
 }
 
+/*
+ * Scroll inside the block instead of stretching the page.
+ * BC sets .brand-concierge-container { min-height: 850px; overflow-y: auto } — we cap the mount height
+ * so that inner scroll applies and the document does not grow with long threads.
+ */
 #brand-concierge-mount {
-  min-height: 50vh;
+  --bc-mount-max-height: min(85vh, calc(100dvh - var(--nav-height, 6.4rem) - 32px));
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: var(--bc-mount-max-height);
+  max-height: var(--bc-mount-max-height);
+  min-height: 0;
+  overflow: hidden;
   width: 100%;
+}
+
+#brand-concierge-mount .brand-concierge-flex-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#brand-concierge-mount .brand-concierge-container {
+  flex: 1 1 auto;
+  max-height: 100%;
+  min-height: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+#brand-concierge-mount .brand-concierge-container.initial-state {
+  min-height: 0 !important;
 }
