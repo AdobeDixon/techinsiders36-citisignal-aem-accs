@@ -28,6 +28,10 @@ The block model has no authorable fields in Universal Editor (`fields: []`). Run
 
 `brandconcierge.css` caps `#brand-concierge-mount` with a max height (viewport minus header) and overrides the embedded UI’s large `min-height` so the **conversation scrolls inside** `.brand-concierge-container` instead of growing the page. To tune height, set `--bc-mount-max-height` on `#brand-concierge-mount` (for example in a site stylesheet).
 
+### Edge-to-edge (no gray gutters)
+
+Default section styles add **horizontal padding** (`main > .section > div`), which shows as gray margins beside the white chat UI. This block’s CSS sets that padding to **0** (only respecting `safe-area-inset` on notched devices) and clears wrapper/block margins so the chat can run **margin to margin**.
+
 ## Error handling
 
 If `datastreamId` / `orgId` are wrong or Edge calls fail, the experience may not render; check the browser console and Adobe Datastream configuration. Network or CSP issues loading `/scripts/alloy.js` or `/scripts/brandconciergemain.js` will prevent the UI from appearing.

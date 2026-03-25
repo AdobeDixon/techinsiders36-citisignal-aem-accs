@@ -1,5 +1,6 @@
 /* Full-width Brand Concierge: default sections use main > .section > div { max-width: 1200px } */
 
+/* Edge-to-edge: remove horizontal padding that shows as gray “gutters” around the white chat UI */
 main > .section.brandconcierge-container > div,
 main > .section:has(.block.brandconcierge) > div {
   box-sizing: border-box;
@@ -7,20 +8,20 @@ main > .section:has(.block.brandconcierge) > div {
   margin-right: 0;
   max-width: none;
   width: 100%;
-  padding-left: var(--spacing-medium);
-  padding-right: var(--spacing-medium);
+  padding-left: max(0px, env(safe-area-inset-left, 0px));
+  padding-right: max(0px, env(safe-area-inset-right, 0px));
 }
 
-@media (min-width: 900px) {
-  main > .section.brandconcierge-container > div,
-  main > .section:has(.block.brandconcierge) > div {
-    padding-left: var(--spacing-big);
-    padding-right: var(--spacing-big);
-  }
+main .brandconcierge-wrapper {
+  margin: 0;
+  max-width: none;
+  padding: 0;
 }
 
 .block.brandconcierge {
+  margin: 0;
   max-width: none;
+  padding: 0;
   width: 100%;
 }
 
@@ -53,7 +54,9 @@ main > .section:has(.block.brandconcierge) > div {
 
 #brand-concierge-mount .brand-concierge-container {
   flex: 1 1 auto;
+  margin-inline: 0;
   max-height: 100%;
+  max-width: none;
   min-height: 0 !important;
   overflow-x: hidden;
   overflow-y: auto;
